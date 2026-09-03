@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mixify Mart | Customized Printing & Gifts</title>
+<meta name="description" content="Mixify Mart - Customized printing items, personalized gifts and premium packaging. Delivery all over Pakistan.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#faf9ff;color:#171426;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid #eee;box-shadow:0 3px 18px rgba(0,0,0,.05)}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:21px}
+.brand img{width:55px;height:55px;object-fit:contain}
+nav{display:flex;gap:25px;font-weight:600;font-size:14px}
+nav a:hover{color:#7c3aed}
+.btn{display:inline-block;padding:13px 21px;border-radius:12px;background:#7c3aed;color:#fff;font-weight:700;border:0;cursor:pointer}
+.btn:hover{background:#6528d1}
+.btn.alt{background:#111;color:#fff}
+.hero{padding:78px 0 65px;background:linear-gradient(135deg,#f4edff,#fff 55%,#f5f7ff)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:55px}
+.badge{display:inline-block;background:#ede9fe;color:#6d28d9;padding:8px 13px;border-radius:99px;font-size:13px;font-weight:700;margin-bottom:16px}
+h1{font-size:clamp(38px,6vw,68px);line-height:1.03;letter-spacing:-2px;margin-bottom:20px}
+.hero p{font-size:18px;color:#5b5870;max-width:650px;margin-bottom:27px}
+.hero-card{background:#fff;border-radius:26px;padding:22px;box-shadow:0 20px 60px rgba(70,45,120,.15);transform:rotate(2deg)}
+.hero-card img{width:100%;border-radius:18px;display:block}
+.section{padding:75px 0}
+.section-head{text-align:center;margin-bottom:38px}
+.section-head h2{font-size:36px;margin-bottom:8px}
+.section-head p{color:#6b6879}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.product{background:#fff;border:1px solid #eee;border-radius:20px;overflow:hidden;box-shadow:0 8px 28px rgba(30,20,60,.06);display:flex;flex-direction:column}
+.product-img{height:235px;background:#f4f1fa;display:flex;align-items:center;justify-content:center;padding:18px}
+.product-img img{width:100%;height:100%;object-fit:contain;border-radius:12px}
+.placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#111,#3b3150);color:white;font-size:28px;font-weight:800;border-radius:12px;padding:20px}
+.product-body{padding:19px;display:flex;flex-direction:column;flex:1}
+.product h3{font-size:19px;margin-bottom:7px}
+.product p{font-size:14px;color:#686579;margin-bottom:12px}
+.price{font-size:21px;font-weight:800;color:#6d28d9;margin-top:auto;margin-bottom:14px}
+.info{font-size:12px;color:#777;margin-bottom:15px}
+.product .btn{width:100%;text-align:center}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.feature{background:#fff;border-radius:18px;padding:25px;border:1px solid #eee}
+.feature strong{display:block;font-size:18px;margin-bottom:7px}
+.feature span{color:#696678;font-size:14px}
+.about{background:#15121f;color:#fff}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.about p{color:#c8c4d2;margin:15px 0}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step{background:#fff;padding:22px;border-radius:16px;border:1px solid #eee}
+.num{width:36px;height:36px;border-radius:50%;background:#ede9fe;color:#6d28d9;display:grid;place-items:center;font-weight:800;margin-bottom:13px}
+.contact{background:linear-gradient(135deg,#7c3aed,#4f46e5);color:white}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.contact p{color:#eee;margin:10px 0 20px}
+.contact-box{background:rgba(255,255,255,.12);padding:25px;border:1px solid rgba(255,255,255,.2);border-radius:20px}
+.contact-box div{margin:10px 0}
+footer{background:#0e0c14;color:#bbb;padding:25px 0;text-align:center;font-size:13px}
+.whatsapp{position:fixed;right:20px;bottom:20px;z-index:30;background:#25d366;color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:25px;font-weight:bold;box-shadow:0 8px 25px rgba(0,0,0,.2)}
+@media(max-width:950px){.products{grid-template-columns:repeat(2,1fr)}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){nav{display:none}.products,.features,.steps{grid-template-columns:1fr}.hero{padding-top:50px}.section{padding:55px 0}.hero-card{transform:none}h1{letter-spacing:-1px}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container nav">
+<a class="brand" href="#home"><img src="assets/logo.png" alt="Mixify Mart logo"><span>Mixify Mart</span></a>
+<nav>
+<a href="#home">Home</a><a href="#products">Products</a><a href="#about">About Us</a><a href="#order">How to Order</a><a href="#contact">Contact</a>
+</nav>
+<a class="btn" href="https://wa.me/923420927142?text=Assalam-o-Alaikum%20Mixify%20Mart%2C%20I%20want%20to%20place%20an%20order.">Order Now</a>
+</div>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div class="container hero-grid">
+<div>
+<span class="badge">CUSTOM PRINTING • GIFTS • QUALITY</span>
+<h1>Make It Personal,<br>Make It Special.</h1>
+<p>We deal in customized printing items at affordable prices, with high-quality products and premium packaging. Delivery available all over Pakistan.</p>
+<a class="btn" href="#products">Explore Products</a>
+<a class="btn alt" style="margin-left:8px" href="https://wa.me/923420927142?text=Assalam-o-Alaikum%20Mixify%20Mart%2C%20I%20want%20to%20place%20an%20order.">WhatsApp Us</a>
+</div>
+<div class="hero-card"><img src="assets/custom-mug.png" alt="Customized mug"></div>
+</div>
+</section>
+
+<section class="section" id="products">
+<div class="container">
+<div class="section-head"><h2>Our Customized Products</h2><p>Quality products, personalized just for you.</p></div>
+<div class="products">
+
+<article class="product">
+<div class="product-img"><img src="assets/custom-mug.png" alt="Custom Mug Print"></div>
+<div class="product-body">
+<h3>Custom Mug Print</h3><p>Personalized mug printing for birthdays, gifts, memories and special occasions.</p>
+<div class="price">Rs. 1,000</div><div class="info">Delivery charges included • All Pakistan</div>
+<a class="btn" href="https://wa.me/923420927142?text=Assalam-o-Alaikum%20Mixify%20Mart%2C%20I%20want%20to%20order%20a%20Custom%20Mug%20Print%20for%20Rs.%201%2C000.">Order on WhatsApp</a>
+</div></article>
+
+<article class="product">
+<div class="product-img"><img src="assets/custom-tshirt.png" alt="Custom T-Shirt"></div>
+<div class="product-body">
+<h3>Custom T-Shirt</h3><p>Customized T-shirts with your preferred name, photo or design.</p>
+<div class="price">Rs. 1,500</div><div class="info">All sizes available • Delivery all over Pakistan</div>
+<a class="btn" href="https://wa.me/923420927142?text=Assalam-o-Alaikum%20Mixify%20Mart%2C%20I%20want%20to%20order%20a%20Custom%20T-Shirt%20for%20Rs.%201%2C500.">Order on WhatsApp</a>
+</div></article>
+
+<article class="product">
+<div class="product-img"><div class="placeholder">CUSTOM<br>BIRTHDAY<br>FRAME</div></div>
+<div class="product-body">
+<h3>Custom Birthday Black Frame</h3><p>A beautiful personalized black frame for birthdays, photos and memorable moments.</p>
+<div class="price">Rs. 1,800</div><div class="info">Customized • Delivery all over Pakistan</div>
+<a class="btn" href="https://wa.me/923420927142?text=Assalam-o-Alaikum%20Mixify%20Mart%2C%20I%20want%20to%20order%20a%20Custom%20Birthday%20Black%20Frame%20for%20Rs.%201%2C800.">Order on WhatsApp</a>
+</div></article>
+
+<article class="product">
+<div class="product-img"><div class="placeholder">PHOTO<br>ALBUM<br>5 × 7</div></div>
+<div class="product-body">
+<h3>Custom Photo Album</h3><p>Keep your favorite memories together in a personalized photo album.</p>
+<div class="price">Rs. 150 / picture</div><div class="info">Album size 5 × 7 • Delivery Rs. 350 extra • All Pakistan</div>
+<a class="btn" href="https://wa.me/923420927142?text=Assalam-o-Alaikum%20Mixify%20Mart%2C%20I%20want%20to%20order%20a%20Custom%20Photo%20Album%20(5%20x%207).%20Rate%20is%20Rs.%20150%20per%20picture%20%2B%20Rs.%20350%20delivery.">Order on WhatsApp</a>
+</div></article>
+
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="section-head"><h2>Why Choose Mixify Mart?</h2><p>We focus on quality, affordability and a great customer experience.</p></div>
+<div class="features">
+<div class="feature"><strong>High Quality</strong><span>Carefully prepared customized products with quality finishing.</span></div>
+<div class="feature"><strong>Low Rates</strong><span>Affordable customized printing for gifts and special occasions.</span></div>
+<div class="feature"><strong>Premium Packaging</strong><span>Products are prepared with attractive and thoughtful packaging.</span></div>
+</div>
+</div>
+</section>
+
+<section class="section about" id="about">
+<div class="container about-grid">
+<div><span class="badge">ABOUT MIXIFY MART</span><h2>Customized products made with care.</h2><p>Mixify Mart deals in customized printing items, personalized gifts and quality products. Whether it is a birthday, a special memory or a personal gift, we help turn your ideas into something memorable.</p><a class="btn" href="https://wa.me/923420927142?text=Assalam-o-Alaikum%20Mixify%20Mart%2C%20I%20want%20to%20know%20more%20about%20your%20custom%20printing%20items.">Talk to Us</a></div>
+<div class="feature" style="color:#171426"><strong>📍 Muslim Bazar, D.I. Khan</strong><span>Serving customers with customized printing and gifts.</span><br><br><strong>📞 0342-0927142</strong><span>WhatsApp & Call</span><br><br><strong>🚚 Delivery All Over Pakistan</strong><span>Order from anywhere in Pakistan.</span></div>
+</div>
+</section>
+
+<section class="section" id="order">
+<div class="container">
+<div class="section-head"><h2>How to Order</h2><p>Ordering your customized product is easy.</p></div>
+<div class="steps">
+<div class="step"><div class="num">1</div><strong>Choose Product</strong><p>Select the customized item you want.</p></div>
+<div class="step"><div class="num">2</div><strong>Send Details</strong><p>Send your name, photos or design on WhatsApp.</p></div>
+<div class="step"><div class="num">3</div><strong>Confirm Order</strong><p>Confirm your customization and order details.</p></div>
+<div class="step"><div class="num">4</div><strong>Get Delivery</strong><p>Receive your customized product anywhere in Pakistan.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section contact" id="contact">
+<div class="container contact-grid">
+<div><h2>Ready to Customize Something Special?</h2><p>Contact Mixify Mart on WhatsApp or call us for your customized printing order.</p><a class="btn alt" href="https://wa.me/923420927142?text=Assalam-o-Alaikum%20Mixify%20Mart%2C%20I%20want%20to%20place%20an%20order.">Start Your Order</a></div>
+<div class="contact-box"><div><b>WhatsApp & Call</b><br>0342-0927142</div><div><b>Address</b><br>Muslim Bazar, D.I. Khan</div><div><b>Delivery</b><br>All over Pakistan</div></div>
+</div>
+</section>
+</main>
+
+<footer>© 2026 Mixify Mart. Customized Printing & Personalized Gifts.</footer>
+<a class="whatsapp" href="https://wa.me/923420927142?text=Assalam-o-Alaikum%20Mixify%20Mart%2C%20I%20want%20to%20place%20an%20order." aria-label="WhatsApp">WA</a>
+</body>
+</html>
