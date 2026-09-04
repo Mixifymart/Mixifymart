@@ -61,6 +61,25 @@ footer{background:#0e0c14;color:#bbb;padding:25px 0;text-align:center;font-size:
 .whatsapp{position:fixed;right:20px;bottom:20px;z-index:30;background:#25d366;color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:25px;font-weight:bold;box-shadow:0 8px 25px rgba(0,0,0,.2)}
 @media(max-width:950px){.products{grid-template-columns:repeat(2,1fr)}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:650px){nav{display:none}.products,.features,.steps{grid-template-columns:1fr}.hero{padding-top:50px}.section{padding:55px 0}.hero-card{transform:none}h1{letter-spacing:-1px}}
+
+/* Premium visual upgrade */
+body{background:linear-gradient(135deg,#fbf9ff 0%,#fff 45%,#f7f4ff 100%)}
+header{background:rgba(255,255,255,.82);backdrop-filter:blur(16px)}
+.hero{background:radial-gradient(circle at 10% 10%,#eadcff 0,transparent 32%),radial-gradient(circle at 92% 8%,#ffd8ed 0,transparent 30%),linear-gradient(135deg,#f8f1ff,#fff 52%,#eef3ff)}
+.hero h1{animation:fadeUp .8s ease both}.hero p{animation:fadeUp .95s .08s ease both}.hero .btn{animation:fadeUp 1.05s .15s ease both}
+.hero-card{animation:heroFloat 5s ease-in-out infinite,fadeUp .8s ease both;position:relative}
+.hero-card:after{content:"✨ CUSTOMIZED WITH LOVE";position:absolute;right:-12px;bottom:18px;background:#fff;color:#7c3aed;border-radius:999px;padding:9px 13px;font-size:11px;font-weight:900;box-shadow:0 8px 25px rgba(50,20,100,.14)}
+.section-head h2{background:linear-gradient(90deg,#171226,#7c3aed,#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent}
+.product{animation:fadeUp .7s ease both}.product:nth-child(2){animation-delay:.08s}.product:nth-child(3){animation-delay:.16s}.product:nth-child(4){animation-delay:.24s}
+.product-img{position:relative;overflow:hidden}.product-img:after{content:"";position:absolute;inset:auto -30% -70% -30%;height:100px;background:rgba(255,255,255,.5);transform:rotate(-8deg);transition:.4s}.product:hover .product-img:after{bottom:-45%}
+.product-img img{transition:transform .45s ease}.product:hover .product-img img{transform:scale(1.04)}
+.feature,.step{transition:.3s}.feature:hover,.step:hover{transform:translateY(-5px);box-shadow:0 16px 35px rgba(60,25,100,.11)}
+.offer{position:relative;overflow:hidden}.offer:before,.offer:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.15);animation:floatBubble 6s ease-in-out infinite}.offer:before{width:130px;height:130px;left:-40px;top:-45px}.offer:after{width:90px;height:90px;right:-20px;bottom:-25px;animation-delay:1s}
+.whatsapp{font-size:18px}.whatsapp:after{content:"";position:absolute;inset:-5px;border:2px solid rgba(37,211,102,.35);border-radius:50%;animation:ring 2s infinite}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes heroFloat{0%,100%{transform:translateY(0) rotate(1deg)}50%{transform:translateY(-10px) rotate(-1deg)}}
+@keyframes floatBubble{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+@keyframes ring{0%{transform:scale(.92);opacity:1}100%{transform:scale(1.28);opacity:0}}
 </style>
 </head>
 <body>
@@ -111,7 +130,7 @@ footer{background:#0e0c14;color:#bbb;padding:25px 0;text-align:center;font-size:
 </div></article>
 
 <article class="product">
-<div class="product-img"><div class="placeholder">CUSTOM<br>BIRTHDAY<br>FRAME</div></div>
+<div class="product-img"><img src="assets/birthday-frame.png" alt="Custom Birthday Black Frame"></div>
 <div class="product-body">
 <h3>Custom Birthday Black Frame</h3><p>A beautiful personalized black frame for birthdays, photos and memorable moments.</p>
 <div class="price">Rs. 1,800</div><div class="info">Customized • Delivery all over Pakistan</div>
@@ -119,7 +138,7 @@ footer{background:#0e0c14;color:#bbb;padding:25px 0;text-align:center;font-size:
 </div></article>
 
 <article class="product">
-<div class="product-img"><div class="placeholder">PHOTO<br>ALBUM<br>5 × 7</div></div>
+<div class="product-img"><img src="assets/chat-album.png" alt="Custom Photo Album 5 x 7"></div>
 <div class="product-body">
 <h3>Custom Photo Album</h3><p>Keep your favorite memories together in a personalized photo album.</p>
 <div class="price">Rs. 150 / picture</div><div class="info">Album size 5 × 7 • Delivery Rs. 350 extra • All Pakistan</div>
