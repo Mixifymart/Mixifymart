@@ -1,269 +1,152 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mixify Mart | Customized Printing & Gifts</title>
-<meta name="description" content="Mixify Mart - Customized printing items, personalized gifts and premium packaging. Delivery all over Pakistan.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mixify Mart — Custom Printing & Personalized Gifts</title>
+<meta name="description" content="Mixify Mart — Print, personalize and make it yours. Custom printing and personalized gifts delivered across Pakistan.">
 <style>
+:root{
+ --pink:#ff159f;--purple:#702cff;--blue:#05bfff;--cyan:#00e6c3;--yellow:#ffd52d;
+ --ink:#15164b;--white:rgba(255,255,255,.94);
+}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:#faf9ff;color:#171426;line-height:1.6}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--ink);overflow-x:hidden;background:#3b23dc}
+body:before{content:"";position:fixed;inset:0;z-index:-5;background:
+ radial-gradient(circle at 8% 10%,#ff21ad 0 10%,transparent 28%),
+ radial-gradient(circle at 86% 12%,#00d7ff 0 12%,transparent 30%),
+ radial-gradient(circle at 72% 70%,#6f22ff 0 13%,transparent 34%),
+ radial-gradient(circle at 14% 82%,#ff7bd7 0 11%,transparent 31%),
+ linear-gradient(125deg,#ff1a9d,#6530ff 35%,#00bff5 67%,#12d7bd);
+ background-size:140% 140%;animation:bgMove 16s ease-in-out infinite alternate}
+body:after{content:"";position:fixed;inset:-20%;z-index:-4;opacity:.35;background:
+ radial-gradient(ellipse at 20% 30%,#ffe600 0 4%,transparent 10%),
+ radial-gradient(ellipse at 70% 18%,#ff43bc 0 5%,transparent 11%),
+ radial-gradient(ellipse at 45% 85%,#00f4db 0 5%,transparent 12%),
+ radial-gradient(ellipse at 88% 75%,#ffea4d 0 5%,transparent 11%);
+ filter:blur(14px);animation:drift 22s linear infinite alternate}
+@keyframes bgMove{0%{background-position:0 0}50%{background-position:100% 35%}100%{background-position:30% 100%}}
+@keyframes drift{to{transform:translate(80px,-60px) rotate(12deg) scale(1.08)}}
+@keyframes float{50%{transform:translateY(-10px)}}
+@keyframes shine{0%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+@keyframes pulse{50%{box-shadow:0 0 0 12px rgba(255,255,255,0),0 12px 35px rgba(0,0,0,.2)}}
 a{text-decoration:none;color:inherit}
-.container{width:min(1120px,92%);margin:auto}
-header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid #eee;box-shadow:0 3px 18px rgba(0,0,0,.05)}
-.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:21px}
-.brand img{width:55px;height:55px;object-fit:contain}
-nav{display:flex;gap:25px;font-weight:600;font-size:14px}
-nav a:hover{color:#7c3aed}
-.btn{display:inline-block;padding:13px 21px;border-radius:12px;background:#7c3aed;color:#fff;font-weight:700;border:0;cursor:pointer}
-.btn:hover{background:#6528d1}
-.btn.alt{background:#111;color:#fff}
-.hero{padding:78px 0 65px;background:linear-gradient(135deg,#f4edff,#fff 55%,#f5f7ff)}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:55px}
-.badge{display:inline-block;background:#ede9fe;color:#6d28d9;padding:8px 13px;border-radius:99px;font-size:13px;font-weight:700;margin-bottom:16px}
-h1{font-size:clamp(38px,6vw,68px);line-height:1.03;letter-spacing:-2px;margin-bottom:20px}
-.hero p{font-size:18px;color:#5b5870;max-width:650px;margin-bottom:27px}
-.hero-card{background:#fff;border-radius:26px;padding:22px;box-shadow:0 20px 60px rgba(70,45,120,.15);transform:rotate(2deg)}
-.hero-card img{width:100%;border-radius:18px;display:block}
-.section{padding:75px 0}
-.section-head{text-align:center;margin-bottom:38px}
-.section-head h2{font-size:36px;margin-bottom:8px}
-.section-head p{color:#6b6879}
-.products{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-.product{background:#fff;border:1px solid #eee;border-radius:20px;overflow:hidden;box-shadow:0 8px 28px rgba(30,20,60,.06);display:flex;flex-direction:column}
-.product-img{height:235px;background:#f4f1fa;display:flex;align-items:center;justify-content:center;padding:18px}
-.product-img img{width:100%;height:100%;object-fit:contain;border-radius:12px}
-.placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#111,#3b3150);color:white;font-size:28px;font-weight:800;border-radius:12px;padding:20px}
-.product-body{padding:19px;display:flex;flex-direction:column;flex:1}
-.product h3{font-size:19px;margin-bottom:7px}
-.product p{font-size:14px;color:#686579;margin-bottom:12px}
-.price{font-size:21px;font-weight:800;color:#6d28d9;margin-top:auto;margin-bottom:14px}
-.info{font-size:12px;color:#777;margin-bottom:15px}
-.product .btn{width:100%;text-align:center}
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.feature{background:#fff;border-radius:18px;padding:25px;border:1px solid #eee}
-.feature strong{display:block;font-size:18px;margin-bottom:7px}
-.feature span{color:#696678;font-size:14px}
-.about{background:#15121f;color:#fff}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
-.about p{color:#c8c4d2;margin:15px 0}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.step{background:#fff;padding:22px;border-radius:16px;border:1px solid #eee}
-.num{width:36px;height:36px;border-radius:50%;background:#ede9fe;color:#6d28d9;display:grid;place-items:center;font-weight:800;margin-bottom:13px}
-.contact{background:linear-gradient(135deg,#7c3aed,#4f46e5);color:white}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.contact p{color:#eee;margin:10px 0 20px}
-.contact-box{background:rgba(255,255,255,.12);padding:25px;border:1px solid rgba(255,255,255,.2);border-radius:20px}
-.contact-box div{margin:10px 0}
-footer{background:#0e0c14;color:#bbb;padding:25px 0;text-align:center;font-size:13px}
-.whatsapp{position:fixed;right:20px;bottom:20px;z-index:30;background:#25d366;color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:25px;font-weight:bold;box-shadow:0 8px 25px rgba(0,0,0,.2)}
-@media(max-width:950px){.products{grid-template-columns:repeat(2,1fr)}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:650px){nav{display:none}.products,.features,.steps{grid-template-columns:1fr}.hero{padding-top:50px}.section{padding:55px 0}.hero-card{transform:none}h1{letter-spacing:-1px}}
-
-/* Premium visual upgrade */
-body{background:linear-gradient(135deg,#fbf9ff 0%,#fff 45%,#f7f4ff 100%)}
-header{background:rgba(255,255,255,.82);backdrop-filter:blur(16px)}
-.hero{background:radial-gradient(circle at 10% 10%,#eadcff 0,transparent 32%),radial-gradient(circle at 92% 8%,#ffd8ed 0,transparent 30%),linear-gradient(135deg,#f8f1ff,#fff 52%,#eef3ff)}
-.hero h1{animation:fadeUp .8s ease both}.hero p{animation:fadeUp .95s .08s ease both}.hero .btn{animation:fadeUp 1.05s .15s ease both}
-.hero-card{animation:heroFloat 5s ease-in-out infinite,fadeUp .8s ease both;position:relative}
-.hero-card:after{content:"✨ CUSTOMIZED WITH LOVE";position:absolute;right:-12px;bottom:18px;background:#fff;color:#7c3aed;border-radius:999px;padding:9px 13px;font-size:11px;font-weight:900;box-shadow:0 8px 25px rgba(50,20,100,.14)}
-.section-head h2{background:linear-gradient(90deg,#171226,#7c3aed,#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent}
-.product{animation:fadeUp .7s ease both}.product:nth-child(2){animation-delay:.08s}.product:nth-child(3){animation-delay:.16s}.product:nth-child(4){animation-delay:.24s}
-.product-img{position:relative;overflow:hidden}.product-img:after{content:"";position:absolute;inset:auto -30% -70% -30%;height:100px;background:rgba(255,255,255,.5);transform:rotate(-8deg);transition:.4s}.product:hover .product-img:after{bottom:-45%}
-.product-img img{transition:transform .45s ease}.product:hover .product-img img{transform:scale(1.04)}
-.feature,.step{transition:.3s}.feature:hover,.step:hover{transform:translateY(-5px);box-shadow:0 16px 35px rgba(60,25,100,.11)}
-.offer{position:relative;overflow:hidden}.offer:before,.offer:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.15);animation:floatBubble 6s ease-in-out infinite}.offer:before{width:130px;height:130px;left:-40px;top:-45px}.offer:after{width:90px;height:90px;right:-20px;bottom:-25px;animation-delay:1s}
-.whatsapp{font-size:18px}.whatsapp:after{content:"";position:absolute;inset:-5px;border:2px solid rgba(37,211,102,.35);border-radius:50%;animation:ring 2s infinite}
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@keyframes heroFloat{0%,100%{transform:translateY(0) rotate(1deg)}50%{transform:translateY(-10px) rotate(-1deg)}}
-@keyframes floatBubble{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
-@keyframes ring{0%{transform:scale(.92);opacity:1}100%{transform:scale(1.28);opacity:0}}
-
-/* --- Mixify Mart colorful premium refresh --- */
-body{
-  background:linear-gradient(120deg,#fff0f8,#f0f4ff,#fff5fb,#eaf5ff);
-  background-size:400% 400%; animation:bgMove 18s ease infinite;
-  overflow-x:hidden;
-}
-body:before,body:after{content:"";position:fixed;z-index:-2;border-radius:50%;filter:blur(70px);opacity:.42;pointer-events:none}
-body:before{width:420px;height:420px;left:-150px;top:12%;background:#ff63bd;animation:orb1 13s ease-in-out infinite alternate}
-body:after{width:480px;height:480px;right:-170px;bottom:5%;background:#5d8cff;animation:orb2 15s ease-in-out infinite alternate}
-@keyframes bgMove{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-@keyframes orb1{to{transform:translate(120px,90px) scale(1.18)}}
-@keyframes orb2{to{transform:translate(-110px,-70px) scale(1.12)}}
-header{
- background:rgba(255,255,255,.72)!important;backdrop-filter:blur(18px);
- border-bottom:1px solid rgba(255,255,255,.8)!important;
- box-shadow:0 10px 35px rgba(80,65,140,.12)!important;
-}
-.nav{height:82px}
-.brand{color:#30265f}
-nav a{transition:.25s} nav a:hover{color:#ed3a9e;transform:translateY(-2px)}
-.btn{
- background:linear-gradient(100deg,#ef3ca6,#6571f4)!important;
- border-radius:999px!important;box-shadow:0 10px 24px rgba(105,77,210,.22);
- transition:.25s!important;
-}
-.btn:hover{transform:translateY(-3px);box-shadow:0 15px 30px rgba(105,77,210,.32)!important}
-.btn.alt{background:#302b5d!important}
-.hero{
- background:rgba(255,255,255,.22)!important;
- border-radius:0 0 45px 45px;
-}
-.badge{
- background:rgba(255,255,255,.75)!important;color:#e0399d!important;
- border:1px solid rgba(255,255,255,.9);box-shadow:0 8px 24px rgba(100,70,150,.08)
-}
-h1{
- background:linear-gradient(100deg,#ef3ba5,#6370f4);
- -webkit-background-clip:text;background-clip:text;color:transparent;
-}
-.hero-card{
- background:rgba(255,255,255,.65)!important;
- border:1px solid rgba(255,255,255,.9);
- box-shadow:0 25px 70px rgba(80,60,150,.18)!important;
- animation:cardFloat 5s ease-in-out infinite;
-}
-@keyframes cardFloat{50%{transform:rotate(1deg) translateY(-10px)}}
-.section{position:relative}
-.section-head h2{
- background:linear-gradient(100deg,#3b3371,#e43b9f,#586bf3);
- -webkit-background-clip:text;background-clip:text;color:transparent;
-}
-.products{gap:20px}
-.product{
- background:rgba(255,255,255,.72)!important;
- border:1px solid rgba(255,255,255,.95)!important;
- border-radius:26px!important;
- box-shadow:0 16px 45px rgba(72,60,130,.10)!important;
- transition:.3s!important;
-}
-.product:hover{transform:translateY(-9px);box-shadow:0 25px 55px rgba(72,60,130,.18)!important}
-.product-img{
- background:linear-gradient(135deg,rgba(255,230,246,.9),rgba(230,239,255,.9))!important;
-}
-.price{color:#e53b9f!important}
-.features .feature,.about-box,.contact-card,.order-box{
- background:rgba(255,255,255,.68)!important;
- border:1px solid rgba(255,255,255,.9)!important;
- box-shadow:0 16px 45px rgba(72,60,130,.09)!important;
- border-radius:26px!important;
-}
-footer{background:rgba(255,255,255,.35)!important;border-top:1px solid rgba(255,255,255,.6)}
-@media(max-width:700px){
- body:before{width:280px;height:280px}.hero{border-radius:0 0 28px 28px}
-}
-
+.wrap{width:min(1420px,94%);margin:auto}
+.topbar{color:#fff;font-weight:800;font-size:14px;padding:9px 0;background:linear-gradient(90deg,rgba(255,20,157,.7),rgba(80,36,255,.55),rgba(0,214,191,.55));border-bottom:1px solid rgba(255,255,255,.3)}
+.topbar .wrap{display:flex;justify-content:space-between;gap:15px}
+.header{position:sticky;top:8px;z-index:20;margin:10px auto 0;background:var(--white);border:2px solid rgba(255,255,255,.9);border-radius:26px;padding:11px 18px;box-shadow:0 15px 45px rgba(20,10,100,.25);backdrop-filter:blur(18px);display:flex;align-items:center;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;min-width:275px}.logo img{width:55px;height:55px;object-fit:contain}.brand{font-size:29px;font-weight:950;letter-spacing:-1.5px;background:linear-gradient(90deg,#f916a3,#4d35e9);-webkit-background-clip:text;color:transparent}.tag{font-size:10px;font-weight:800;color:#3f3b70;margin-top:-3px}
+.search{flex:1;display:flex;align-items:center;border:1.5px solid #b7a8ef;border-radius:30px;height:48px;padding-left:20px;color:#8a85a3}.search button{margin-left:auto;height:46px;width:55px;border:0;border-radius:50%;background:linear-gradient(135deg,#ff14a3,#6330ff);color:#fff;font-size:20px}
+.nav{display:flex;align-items:center;gap:25px;font-weight:800}.nav a{padding:13px 4px}.nav a:hover{color:#e7179f}.cart{font-size:15px}
+.hero{margin-top:12px;display:grid;grid-template-columns:270px 1fr;gap:16px}
+.categories,.heroMain,.benefits,.productsPanel{background:rgba(255,255,255,.95);border:2px solid rgba(255,255,255,.8);box-shadow:0 18px 55px rgba(20,8,100,.22)}
+.categories{border-radius:25px;overflow:hidden}.catTitle{padding:18px 20px;color:#fff;font-weight:950;font-size:18px;background:linear-gradient(100deg,#6330ff,#a818ff)}
+.cat{display:flex;align-items:center;gap:12px;padding:13px 17px;border-bottom:1px solid #eee;color:#18205a;font-weight:750}.cat:hover{background:#fff0fb}.catIcon{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-size:19px;background:linear-gradient(135deg,#ffe1b3,#b9f5ff)}
+.cat span:last-child{margin-left:auto}
+.catOffer{margin:13px;border-radius:18px;padding:16px;color:#fff;background:linear-gradient(135deg,#ff149e,#7a2dff 55%,#00cdb9);position:relative;overflow:hidden}.catOffer:after,.shopBtn:after{content:"";position:absolute;inset:0;width:45%;background:rgba(255,255,255,.25);transform:skewX(-25deg) translateX(-160%);animation:shine 4s infinite}.catOffer b{display:block;font-size:18px}.catOffer small{display:block;margin:5px 0 10px}.smallBtn{display:inline-block;padding:8px 14px;border-radius:18px;background:#fff;color:#8b1fe8;font-weight:900;font-size:12px}
+.heroMain{border-radius:30px;min-height:500px;position:relative;overflow:hidden;padding:42px 46px;background:
+ radial-gradient(circle at 75% 55%,rgba(0,229,255,.9),transparent 28%),
+ radial-gradient(circle at 40% 25%,rgba(255,26,171,.8),transparent 30%),
+ linear-gradient(135deg,#4124df,#1464ee 52%,#04c9d8)}
+.heroMain:before{content:"";position:absolute;inset:0;background-image:radial-gradient(#fff 1.5px,transparent 1.5px);background-size:44px 44px;opacity:.25}
+.heroText{position:relative;z-index:2;max-width:58%;color:#fff}.welcome{font-size:27px;font-style:italic;font-weight:900}.heroTitle{font-size:clamp(44px,5vw,76px);line-height:.95;margin:10px 0;font-weight:1000;color:#fff;text-shadow:0 4px 0 #5b1bcb,0 8px 24px rgba(0,0,0,.2)}.heroTitle span{background:linear-gradient(90deg,#ff26ae,#00eaff);-webkit-background-clip:text;color:transparent;-webkit-text-stroke:1px #fff}.slogan{font-size:23px;font-weight:900;font-style:italic}.yellow{display:inline-block;margin-top:20px;padding:9px 20px;background:#ffd51d;color:#171a67;font-weight:1000;border-radius:6px;transform:rotate(-2deg)}.shopBtn{position:relative;overflow:hidden;display:inline-flex;margin-top:23px;padding:15px 28px;border-radius:28px;background:linear-gradient(90deg,#ff0a9f,#ff35c3,#6c2dff);color:#fff;font-weight:1000;box-shadow:0 10px 25px rgba(0,0,0,.25)}
+.heroProducts{position:absolute;right:2%;bottom:-10px;width:49%;height:92%;display:flex;align-items:center;justify-content:center;z-index:2}.heroProducts:before{content:"";position:absolute;width:82%;height:48%;bottom:5%;border-radius:50%;background:linear-gradient(100deg,#8b2dff,#ff31c7);box-shadow:0 18px 40px rgba(0,0,0,.25)}.heroProducts img{position:relative;width:72%;height:78%;object-fit:contain;filter:drop-shadow(0 18px 12px rgba(0,0,0,.25));animation:float 4s ease-in-out infinite}
+.benefits{margin-top:14px;border-radius:25px;padding:16px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.benefit{display:flex;align-items:center;justify-content:center;gap:12px;border-right:1px solid #ddd}.benefit:last-child{border:0}.bi{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-size:23px;background:linear-gradient(135deg,#f1ddff,#d7fff6)}.benefit b{display:block}.benefit small{color:#777}
+.productsPanel{margin-top:14px;border-radius:28px;padding:18px}.sectionTitle{font-size:24px;font-weight:1000;color:#f0009f;margin:4px 0 14px}.categoryCards{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}.mini{border-radius:17px;padding:10px;background:linear-gradient(135deg,#ffd8eb,#d9e5ff);text-align:center;min-height:145px;display:flex;flex-direction:column;align-items:center;justify-content:space-between}.mini:nth-child(2n){background:linear-gradient(135deg,#fff1a9,#ffe0f5)}.mini:nth-child(3n){background:linear-gradient(135deg,#d4ffbe,#c9faff)}.mini img{height:82px;width:100%;object-fit:contain}.mini b{font-size:14px;color:#171a73}.mini button{border:0;border-radius:15px;padding:6px 12px;color:#fff;font-weight:900;background:linear-gradient(90deg,#ff149f,#6930ff)}
+.featured{margin-top:20px}.featureGrid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}.product{position:relative;border-radius:18px;padding:10px;background:linear-gradient(145deg,#ffe0ef,#d9e9ff);min-height:220px;text-align:center;overflow:hidden}.product:nth-child(2n){background:linear-gradient(145deg,#e2f8ff,#fff0b9)}.product img{width:100%;height:145px;object-fit:contain}.product b{display:block;font-size:14px;color:#171a73}.product button{margin-top:8px;border:0;border-radius:15px;padding:6px 13px;color:#fff;font-weight:900;background:linear-gradient(90deg,#ff149f,#6730ff)}
+footer{color:#fff;text-align:center;padding:28px 0;font-weight:700}
+.float{position:fixed;right:22px;bottom:20px;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:#18d36b;color:#fff;font-size:29px;box-shadow:0 12px 35px rgba(0,0,0,.25);z-index:30;animation:pulse 2s infinite}
+@media(max-width:1050px){.nav{gap:10px}.logo{min-width:auto}.categoryCards{grid-template-columns:repeat(4,1fr)}.featureGrid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:800px){.topbar .wrap{justify-content:center}.topbar .right{display:none}.header{flex-wrap:wrap}.search{order:3;flex-basis:100%}.nav{display:none}.hero{grid-template-columns:1fr}.categories{display:none}.heroMain{min-height:590px;padding:35px 25px}.heroText{max-width:100%;text-align:center}.heroProducts{width:65%;height:50%;right:18%;bottom:-20px;opacity:.9}.heroTitle{font-size:48px}.benefits{grid-template-columns:repeat(2,1fr)}.benefit:nth-child(2){border:0}.featureGrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.brand{font-size:24px}.logo img{width:45px;height:45px}.heroMain{min-height:650px}.heroProducts{width:100%;right:0;height:42%}.categoryCards{grid-template-columns:repeat(2,1fr)}.featureGrid{grid-template-columns:1fr 1fr}.benefit{border:0}.benefits{grid-template-columns:1fr 1fr}.heroTitle{font-size:42px}}
 </style>
 </head>
 <body>
+<div class="topbar"><div class="wrap"><span>🚚 Fast & Reliable Delivery &nbsp; | &nbsp; 🖨️ Custom Printing Services</span><span class="right">Follow Us: &nbsp; 🔵 &nbsp; 🟣 &nbsp; ⚫ &nbsp; 🟢</span></div></div>
 
-<header>
-<div class="container nav">
-<a class="brand" href="#home"><img src="assets/logo.png" alt="Mixify Mart logo"><span>Mixify Mart</span></a>
-<nav>
-<a href="#home">Home</a><a href="#products">Products</a><a href="#about">About Us</a><a href="#order">How to Order</a><a href="#contact">Contact</a>
-</nav>
-<a class="btn" href="https://wa.me/923420927142?text=Assalam-o-Alaikum%20Mixify%20Mart%2C%20I%20want%20to%20place%20an%20order.">Order Now</a>
-</div>
+<header class="header wrap">
+<a class="logo" href="#home"><img src="assets/logo.png" alt="Mixify Mart"><div><div class="brand">Mixify Mart</div><div class="tag">Print • Personalize • Make It Yours</div></div></a>
+<div class="search"><span>Search for products...</span><button>⌕</button></div>
+<nav class="nav"><a href="#home">⌂ Home</a><a href="#products">♡ Shop</a><a href="#about">♧ About</a><a href="#contact">◷ Contact</a><a class="cart" href="https://wa.me/923420927142">🛒 Cart</a></nav>
 </header>
 
-<main>
-<section class="hero" id="home">
-<div class="container hero-grid">
-<div>
-<span class="badge">CUSTOM PRINTING • GIFTS • QUALITY</span>
-<h1>Make It Personal,<br>Make It Special.</h1>
-<p>We deal in customized printing items at affordable prices, with high-quality products and premium packaging. Delivery available all over Pakistan.</p>
-<a class="btn" href="#products">Explore Products</a>
-<a class="btn alt" style="margin-left:8px" href="https://wa.me/923420927142?text=Assalam-o-Alaikum%20Mixify%20Mart%2C%20I%20want%20to%20place%20an%20order.">WhatsApp Us</a>
+<main class="wrap" id="home">
+<div class="hero">
+<aside class="categories">
+<div class="catTitle">☰ &nbsp; Shop By Category</div>
+<div class="cat"><i class="catIcon">🖊️</i>Pen Printing <span>›</span></div>
+<div class="cat"><i class="catIcon">💍</i>Ring Printing <span>›</span></div>
+<div class="cat"><i class="catIcon">🧴</i>Bottle Printing <span>›</span></div>
+<div class="cat"><i class="catIcon">💗</i>Keychain Printing <span>›</span></div>
+<div class="cat"><i class="catIcon">☕</i>Mug Printing <span>›</span></div>
+<div class="cat"><i class="catIcon">🛏️</i>Cushion Printing <span>›</span></div>
+<div class="cat"><i class="catIcon">👕</i>Shirt Printing <span>›</span></div>
+<div class="catOffer"><b>🎁 Custom Products</b><small>For Every Occasion</small><a class="smallBtn" href="https://wa.me/923420927142">Shop Now →</a></div>
+</aside>
+
+<section class="heroMain">
+<div class="heroText">
+<div class="welcome">Welcome to 👑</div>
+<h1 class="heroTitle"><span>Mixify Mart</span></h1>
+<div class="slogan">Your Ideas • Our Prints • Perfect Gifts</div>
+<div class="yellow">Custom Printing &nbsp;|&nbsp; Personalized Gifts &nbsp;|&nbsp; Unique Designs</div><br>
+<a class="shopBtn" href="#products">🛒 &nbsp; Shop Now →</a>
 </div>
-<div class="hero-card"><img src="assets/custom-mug.png" alt="Customized mug"></div>
-</div>
+<div class="heroProducts"><img src="assets/mug.png" alt="Custom Mug"></div>
 </section>
-
-<section class="section" id="products">
-<div class="container">
-<div class="section-head"><h2>Our Customized Products</h2><p>Quality products, personalized just for you.</p></div>
-<div class="products">
-
-<article class="product">
-<div class="product-img"><img src="assets/custom-mug.png" alt="Custom Mug Print"></div>
-<div class="product-body">
-<h3>Custom Mug Print</h3><p>Personalized mug printing for birthdays, gifts, memories and special occasions.</p>
-<div class="price">Rs. 1,000</div><div class="info">Delivery charges included • All Pakistan</div>
-<a class="btn" href="https://wa.me/923420927142?text=Assalam-o-Alaikum%20Mixify%20Mart%2C%20I%20want%20to%20order%20a%20Custom%20Mug%20Print%20for%20Rs.%201%2C000.">Order on WhatsApp</a>
-</div></article>
-
-<article class="product">
-<div class="product-img"><img src="assets/custom-tshirt.png" alt="Custom T-Shirt"></div>
-<div class="product-body">
-<h3>Custom T-Shirt</h3><p>Customized T-shirts with your preferred name, photo or design.</p>
-<div class="price">Rs. 1,500</div><div class="info">All sizes available • Delivery all over Pakistan</div>
-<a class="btn" href="https://wa.me/923420927142?text=Assalam-o-Alaikum%20Mixify%20Mart%2C%20I%20want%20to%20order%20a%20Custom%20T-Shirt%20for%20Rs.%201%2C500.">Order on WhatsApp</a>
-</div></article>
-
-<article class="product">
-<div class="product-img"><img src="assets/birthday-frame.png" alt="Custom Birthday Black Frame"></div>
-<div class="product-body">
-<h3>Custom Birthday Black Frame</h3><p>A beautiful personalized black frame for birthdays, photos and memorable moments.</p>
-<div class="price">Rs. 1,800</div><div class="info">Customized • Delivery all over Pakistan</div>
-<a class="btn" href="https://wa.me/923420927142?text=Assalam-o-Alaikum%20Mixify%20Mart%2C%20I%20want%20to%20order%20a%20Custom%20Birthday%20Black%20Frame%20for%20Rs.%201%2C800.">Order on WhatsApp</a>
-</div></article>
-
-<article class="product">
-<div class="product-img"><img src="assets/chat-album.png" alt="Custom Photo Album 5 x 7"></div>
-<div class="product-body">
-<h3>Custom Photo Album</h3><p>Keep your favorite memories together in a personalized photo album.</p>
-<div class="price">Rs. 150 / picture</div><div class="info">Album size 5 × 7 • Delivery Rs. 350 extra • All Pakistan</div>
-<a class="btn" href="https://wa.me/923420927142?text=Assalam-o-Alaikum%20Mixify%20Mart%2C%20I%20want%20to%20order%20a%20Custom%20Photo%20Album%20(5%20x%207).%20Rate%20is%20Rs.%20150%20per%20picture%20%2B%20Rs.%20350%20delivery.">Order on WhatsApp</a>
-</div></article>
-
 </div>
-</div>
-</section>
 
-<section class="section">
-<div class="container">
-<div class="section-head"><h2>Why Choose Mixify Mart?</h2><p>We focus on quality, affordability and a great customer experience.</p></div>
-<div class="features">
-<div class="feature"><strong>High Quality</strong><span>Carefully prepared customized products with quality finishing.</span></div>
-<div class="feature"><strong>Low Rates</strong><span>Affordable customized printing for gifts and special occasions.</span></div>
-<div class="feature"><strong>Premium Packaging</strong><span>Products are prepared with attractive and thoughtful packaging.</span></div>
+<div class="benefits">
+<div class="benefit"><div class="bi">🚚</div><div><b>Fast Delivery</b><small>Across Pakistan</small></div></div>
+<div class="benefit"><div class="bi">🛡️</div><div><b>Secure Payment</b><small>100% Safe & Secure</small></div></div>
+<div class="benefit"><div class="bi">🏅</div><div><b>Premium Quality</b><small>Best Products</small></div></div>
+<div class="benefit"><div class="bi">🎧</div><div><b>24/7 Support</b><small>We're Here to Help</small></div></div>
+</div>
+
+<section class="productsPanel" id="products">
+<div class="sectionTitle">👑 Featured Categories</div>
+<div class="categoryCards">
+<div class="mini"><img src="assets/tshirt.png"><b>Pen Printing</b><button>Shop Now →</button></div>
+<div class="mini"><img src="assets/mug.png"><b>Mug Printing</b><button>Shop Now →</button></div>
+<div class="mini"><img src="assets/tshirt.png"><b>T-Shirt Printing</b><button>Shop Now →</button></div>
+<div class="mini"><img src="assets/album.png"><b>Keychain Printing</b><button>Shop Now →</button></div>
+<div class="mini"><img src="assets/album.png"><b>Cushion Printing</b><button>Shop Now →</button></div>
+<div class="mini"><img src="assets/mug.png"><b>Bottle Printing</b><button>Shop Now →</button></div>
+<div class="mini"><img src="assets/frame.png"><b>Ring Printing</b><button>Shop Now →</button></div>
+</div>
+
+<div class="featured">
+<div class="sectionTitle">👑 Featured Products <a style="float:right;font-size:14px" href="https://wa.me/923420927142">View All →</a></div>
+<div class="featureGrid">
+<div class="product"><img src="assets/mug.png"><b>Custom Mug</b><button onclick="order('Custom Mug')">Shop Now →</button></div>
+<div class="product"><img src="assets/album.png"><b>Custom Photo Album</b><button onclick="order('Custom Photo Album')">Shop Now →</button></div>
+<div class="product"><img src="assets/tshirt.png"><b>Custom T-Shirt</b><button onclick="order('Custom T-Shirt')">Shop Now →</button></div>
+<div class="product"><img src="assets/frame.png"><b>Birthday Black Frame</b><button onclick="order('Birthday Black Frame')">Shop Now →</button></div>
+<div class="product"><img src="assets/album.png"><b>Custom Keychain</b><button onclick="order('Custom Keychain')">Shop Now →</button></div>
+<div class="product"><img src="assets/tshirt.png"><b>Custom Design Shirt</b><button onclick="order('Custom Design Shirt')">Shop Now →</button></div>
 </div>
 </div>
 </section>
 
-<section class="section about" id="about">
-<div class="container about-grid">
-<div><span class="badge">ABOUT MIXIFY MART</span><h2>Customized products made with care.</h2><p>Mixify Mart deals in customized printing items, personalized gifts and quality products. Whether it is a birthday, a special memory or a personal gift, we help turn your ideas into something memorable.</p><a class="btn" href="https://wa.me/923420927142?text=Assalam-o-Alaikum%20Mixify%20Mart%2C%20I%20want%20to%20know%20more%20about%20your%20custom%20printing%20items.">Talk to Us</a></div>
-<div class="feature" style="color:#171426"><strong>📍 Muslim Bazar, D.I. Khan</strong><span>Serving customers with customized printing and gifts.</span><br><br><strong>📞 0342-0927142</strong><span>WhatsApp & Call</span><br><br><strong>🚚 Delivery All Over Pakistan</strong><span>Order from anywhere in Pakistan.</span></div>
-</div>
+<section class="productsPanel" id="about" style="margin-bottom:14px">
+<div class="sectionTitle">💖 About Mixify Mart</div>
+<p style="line-height:1.8;color:#555;text-align:center;max-width:850px;margin:auto">Print • Personalize • Make It Yours — we create custom printed gifts and personalized products with attractive finishing, friendly service and delivery across Pakistan. <b>For current rates and custom designs, message us on WhatsApp.</b></p>
 </section>
 
-<section class="section" id="order">
-<div class="container">
-<div class="section-head"><h2>How to Order</h2><p>Ordering your customized product is easy.</p></div>
-<div class="steps">
-<div class="step"><div class="num">1</div><strong>Choose Product</strong><p>Select the customized item you want.</p></div>
-<div class="step"><div class="num">2</div><strong>Send Details</strong><p>Send your name, photos or design on WhatsApp.</p></div>
-<div class="step"><div class="num">3</div><strong>Confirm Order</strong><p>Confirm your customization and order details.</p></div>
-<div class="step"><div class="num">4</div><strong>Get Delivery</strong><p>Receive your customized product anywhere in Pakistan.</p></div>
-</div>
-</div>
-</section>
-
-<section class="section contact" id="contact">
-<div class="container contact-grid">
-<div><h2>Ready to Customize Something Special?</h2><p>Contact Mixify Mart on WhatsApp or call us for your customized printing order.</p><a class="btn alt" href="https://wa.me/923420927142?text=Assalam-o-Alaikum%20Mixify%20Mart%2C%20I%20want%20to%20place%20an%20order.">Start Your Order</a></div>
-<div class="contact-box"><div><b>WhatsApp & Call</b><br>0342-0927142</div><div><b>Address</b><br>Muslim Bazar, D.I. Khan</div><div><b>Delivery</b><br>All over Pakistan</div></div>
-</div>
+<section class="productsPanel" id="contact" style="margin-bottom:22px;text-align:center">
+<div class="sectionTitle">📱 Contact & Order</div>
+<p style="color:#555;line-height:1.8">Muslim Bazar, D.I. Khan &nbsp; • &nbsp; 0342-0927142</p>
+<a class="shopBtn" href="https://wa.me/923420927142?text=Hello%20Mixify%20Mart%2C%20I%20want%20to%20place%20an%20order.">💬 Order on WhatsApp</a>
 </section>
 </main>
-
-<footer>© 2026 Mixify Mart. Customized Printing & Personalized Gifts.</footer>
-<a class="whatsapp" href="https://wa.me/923420927142?text=Assalam-o-Alaikum%20Mixify%20Mart%2C%20I%20want%20to%20place%20an%20order." aria-label="WhatsApp">WA</a>
+<footer>© 2026 Mixify Mart • Custom Printing & Personalized Gifts</footer>
+<a class="float" href="https://wa.me/923420927142?text=Hello%20Mixify%20Mart%2C%20I%20want%20to%20place%20an%20order." aria-label="WhatsApp">☏</a>
+<script>
+function order(name){
+ const msg="Hello Mixify Mart, I want to order: "+name+". Please tell me the current rate and details.";
+ location.href="https://wa.me/923420927142?text="+encodeURIComponent(msg);
+}
+</script>
 </body>
 </html>
