@@ -80,6 +80,82 @@ header{background:rgba(255,255,255,.82);backdrop-filter:blur(16px)}
 @keyframes heroFloat{0%,100%{transform:translateY(0) rotate(1deg)}50%{transform:translateY(-10px) rotate(-1deg)}}
 @keyframes floatBubble{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
 @keyframes ring{0%{transform:scale(.92);opacity:1}100%{transform:scale(1.28);opacity:0}}
+
+/* --- Mixify Mart colorful premium refresh --- */
+body{
+  background:linear-gradient(120deg,#fff0f8,#f0f4ff,#fff5fb,#eaf5ff);
+  background-size:400% 400%; animation:bgMove 18s ease infinite;
+  overflow-x:hidden;
+}
+body:before,body:after{content:"";position:fixed;z-index:-2;border-radius:50%;filter:blur(70px);opacity:.42;pointer-events:none}
+body:before{width:420px;height:420px;left:-150px;top:12%;background:#ff63bd;animation:orb1 13s ease-in-out infinite alternate}
+body:after{width:480px;height:480px;right:-170px;bottom:5%;background:#5d8cff;animation:orb2 15s ease-in-out infinite alternate}
+@keyframes bgMove{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes orb1{to{transform:translate(120px,90px) scale(1.18)}}
+@keyframes orb2{to{transform:translate(-110px,-70px) scale(1.12)}}
+header{
+ background:rgba(255,255,255,.72)!important;backdrop-filter:blur(18px);
+ border-bottom:1px solid rgba(255,255,255,.8)!important;
+ box-shadow:0 10px 35px rgba(80,65,140,.12)!important;
+}
+.nav{height:82px}
+.brand{color:#30265f}
+nav a{transition:.25s} nav a:hover{color:#ed3a9e;transform:translateY(-2px)}
+.btn{
+ background:linear-gradient(100deg,#ef3ca6,#6571f4)!important;
+ border-radius:999px!important;box-shadow:0 10px 24px rgba(105,77,210,.22);
+ transition:.25s!important;
+}
+.btn:hover{transform:translateY(-3px);box-shadow:0 15px 30px rgba(105,77,210,.32)!important}
+.btn.alt{background:#302b5d!important}
+.hero{
+ background:rgba(255,255,255,.22)!important;
+ border-radius:0 0 45px 45px;
+}
+.badge{
+ background:rgba(255,255,255,.75)!important;color:#e0399d!important;
+ border:1px solid rgba(255,255,255,.9);box-shadow:0 8px 24px rgba(100,70,150,.08)
+}
+h1{
+ background:linear-gradient(100deg,#ef3ba5,#6370f4);
+ -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-card{
+ background:rgba(255,255,255,.65)!important;
+ border:1px solid rgba(255,255,255,.9);
+ box-shadow:0 25px 70px rgba(80,60,150,.18)!important;
+ animation:cardFloat 5s ease-in-out infinite;
+}
+@keyframes cardFloat{50%{transform:rotate(1deg) translateY(-10px)}}
+.section{position:relative}
+.section-head h2{
+ background:linear-gradient(100deg,#3b3371,#e43b9f,#586bf3);
+ -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.products{gap:20px}
+.product{
+ background:rgba(255,255,255,.72)!important;
+ border:1px solid rgba(255,255,255,.95)!important;
+ border-radius:26px!important;
+ box-shadow:0 16px 45px rgba(72,60,130,.10)!important;
+ transition:.3s!important;
+}
+.product:hover{transform:translateY(-9px);box-shadow:0 25px 55px rgba(72,60,130,.18)!important}
+.product-img{
+ background:linear-gradient(135deg,rgba(255,230,246,.9),rgba(230,239,255,.9))!important;
+}
+.price{color:#e53b9f!important}
+.features .feature,.about-box,.contact-card,.order-box{
+ background:rgba(255,255,255,.68)!important;
+ border:1px solid rgba(255,255,255,.9)!important;
+ box-shadow:0 16px 45px rgba(72,60,130,.09)!important;
+ border-radius:26px!important;
+}
+footer{background:rgba(255,255,255,.35)!important;border-top:1px solid rgba(255,255,255,.6)}
+@media(max-width:700px){
+ body:before{width:280px;height:280px}.hero{border-radius:0 0 28px 28px}
+}
+
 </style>
 </head>
 <body>
